@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  uid-telegram-bot:
+    # Имя образа (можно собрать локально или взять из реестра)
+    image: uid-telegram-bot:latest
+    # Явное имя контейнера
+    container_name: uid_bot
+    # Переменные окружения
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}  # Подтягивается из .env или окружения
+    # Автоперезапуск при падении или перезагрузке системы
+    restart: unless-stopped
+    # Настройки логирования
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    # Метаданные (опционально)
+    labels:
+      com.docker.compose.project: uid-telegram-bot
+      service: uid-bot
+
+# Опционально: можно описать сети, volumes и др.
+networks:
+  default:
+    name: uid-bot-network
+    driver: bridge
