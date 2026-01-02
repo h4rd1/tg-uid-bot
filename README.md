@@ -20,7 +20,6 @@ Telegram бот для отображения UID пользователей.
 
 3. Создайте файл `.env` и заполните его необходимыми параметрами:
    ```bash
-   cp .env.example .env
    nano .env # замените YOUR_TELEGRAM_BOT_TOKEN на ваш токен бота
    ```
 
