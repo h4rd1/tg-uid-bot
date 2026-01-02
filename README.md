@@ -13,14 +13,20 @@ Telegram бот для отображения UID пользователей.
    git clone https://github.com/h4rd1/tg-uid-bot.git
    ```
 
-2. Создайте файл `.env` и заполните его необходимыми параметрами:
+2. Перейдите в каталог проекта:
    ```bash
-   TOKEN=YOUR_TELEGRAM_BOT_TOKEN
+   cd tg-uid-bot
    ```
 
-3. Запустите бота:
+3. Создайте файл `.env` и заполните его необходимыми параметрами:
    ```bash
-  docker-compose up
+   cp .env.example .env
+   nano .env # замените YOUR_TELEGRAM_BOT_TOKEN на ваш токен бота
+   ```
+
+4. Запустите контейнер Docker:
+   ```bash
+   docker-compose up
    ```
 
 ## Использование
